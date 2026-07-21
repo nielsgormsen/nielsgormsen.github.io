@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niels Joachim Gormsen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: #444;
+      background: #fefefd;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #8b1a1a; text-decoration: none; }
+    a:hover { color: #5c0e0e; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #eee;
+      flex-wrap: wrap;
+    }
+
+    .header img {
+      width: 120px;
+      flex-shrink: 0;
+    }
+
+    .header-info {
+      padding-top: 0.1rem;
+    }
+
+    .header-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 0.3rem;
+    }
+
+    .header-titles {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    .header-affil {
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .header-links {
+      font-size: 0.82rem;
+    }
+    .header-links a { margin-right: 1rem; }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 0.5rem 0 3rem;
+    }
+
+    .intro {
+      width: 100%;
+      font-size: 0.85rem;
+      color: #222;
+      margin-top: 0.3rem;
+    }
+    .intro p { margin-bottom: 0.1rem; }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.8rem;
+      color: #222;
+    }
+
+    /* ── PAPER ── */
+    .paper {
+      margin-bottom: 1.3rem;
+      line-height: 1.55;
+    }
+
+    .paper-head {
+      font-size: 0.88rem;
+      color: #222;
+    }
+    .paper-head a { color: #8b1a1a; }
+    .paper-head a:hover { color: #5c0e0e; }
+    .paper-title { font-weight: 600; color: #222; }
+    .paper-title a { color: #222; }
+    .paper-title a:hover { color: #8b1a1a; }
+    .coauthors { font-weight: 400; }
+    .sep { margin: 0 0.2rem; color: #ccc; }
+
+    .paper-journal {
+      font-size: 0.85rem;
+      font-style: italic;
+      font-weight: 600;
+      color: #222;
+      margin-top: 0.1rem;
+    }
+    .paper-journal .status { font-style: normal; font-weight: 400; }
+    .paper-journal .jdetail { font-weight: 400; }
+
+    .paper-award {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #8b1a1a;
+      margin-top: 0.1rem;
+    }
+
+    .paper-abstract {
+      font-size: 0.84rem;
+      margin-top: 0.15rem;
+      line-height: 1.6;
+    }
+
+    .paper-media {
+      font-size: 0.84rem;
+      margin-top: 0.1rem;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .header { flex-direction: column; gap: 1rem; }
+      .header img { width: 100px; }
+      .container { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <img
+      src="photo.png"
+      alt="Niels Joachim Gormsen"
+      onerror="this.style.display='none'"
+    />
+    <div class="header-info">
+      <div class="header-name">Niels Joachim Gormsen</div>
+      <div class="header-titles">
+        DNRF Chair Professor of Finance, Copenhagen Business School<br>
+        Visiting Professor of Finance, University of Chicago Booth School of Business
+      </div>
+      <div class="header-affil">NBER · CEPR · Danish Finance Institute</div>
+      <div class="header-links">
+        <a href="mailto:njg.fi@cbs.dk">Email</a>
+        <a href="CV.pdf" target="_blank">CV</a>
+        <a href="https://costofcapital.org/" target="_blank">Cost of Capital Project</a>
+      </div>
+      </div>
+    <div class="intro">
+      <p><a href="https://costofcapital.org/" target="_blank">Click here</a> for summary of work on cost of capital and discount rates.</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <h2>Working Papers</h2>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2026/06/GormsenHuber2026.pdf" target="_blank">Firms' Perceived Cost of Capital</a></span><span class="sep">·</span>with <span class="coauthors">Kilian Huber</span><span class="sep">·</span>June 2026<span class="sep">·</span><a href="https://kilianhuber.github.io/website/GormsenHuberPCOCSlides2025.pdf" target="_blank">Slides</a>
+      </div>
+      <div class="paper-journal"><span class="status">Revision requested,</span> Quarterly Journal of Economics</div>
+      <div class="paper-abstract">Firms' perceived cost of capital differs from expected returns in financial markets. The differences distort the allocation of capital and reduce TFP by 5% in a standard model. See <a href="https://costofcapital.org/" target="_blank">costofcapital.org</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://ebenlazarus.github.io/RatesEquity.pdf" target="_blank">Interest Rates and Equity Valuations</a></span><span class="sep">·</span>with <span class="coauthors">Eben Lazarus</span><span class="sep">·</span>January 2026<span class="sep">·</span><a href="https://ebenlazarus.github.io/RatesEquitySlides.pdf" target="_blank">Slides</a>
+      </div>
+      <div class="paper-abstract">How do changes in interest rates affect stock prices? It depends on why interest rates change. We identify "pure discount rate shocks" — movements in interest rates driven by neither changes in expected growth nor risk — which should be transmitted one-for-one into equity valuations. Pure discount rate shocks explain 80% of changes in equity valuations in G7 countries over the last 30 years.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2026/02/FukuiGormsenHuber2026.pdf" target="_blank">Sticky Discount Rates</a></span><span class="sep">·</span>with <span class="coauthors">Masao Fukui</span> and <span class="coauthors">Kilian Huber</span><span class="sep">·</span>February 2026<span class="sep">·</span><a href="https://kilianhuber.github.io/website/Sticky_Discount_Rates_Slides.pdf" target="_blank">Slides</a>&thinsp;<a href="https://voices.uchicago.edu/gormsen/files/2024/04/StickyDiscountRatesBrief-2dc6ecffc24d3fc1.pdf" target="_blank">BFI Brief</a>
+      </div>
+      <div class="paper-media">Featured in: <a href="https://www.ft.com/content/65b0976c-3bc9-4305-ba8a-5ab2cec22d62" target="_blank">FT</a></div>
+      <div class="paper-abstract">Firms’ nominal discount rates are sticky with respect to expected inflation. Sticky discount rates make firms’ investment demand increase when inflation increases, leading to a distinct source of monetary non-neutrality. See <a href="https://costofcapital.org/" target="_blank">costofcapital.org</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2024/12/Climate_Capitalists-2024.pdf" target="_blank">Climate Capitalists</a></span><span class="sep">·</span>with <span class="coauthors">Kilian Huber</span> and <span class="coauthors">Simon Oh</span><span class="sep">·</span>December 2024<span class="sep">·</span><a href="https://kilianhuber.github.io/website/Climate_Capitalists_Slides.pdf" target="_blank">Slides</a>&thinsp;<a href="https://www.kellogg.northwestern.edu/-/media/files/academics-research/social-impact-sustainability/moskowitz-prize/2024-moskowitz-research-brief--climate-capitalists-1.ashx" target="_blank">Kellogg Brief</a>&thinsp;<a href="https://bfi.uchicago.edu/wp-content/uploads/2024/11/Climate-Capitalists.pdf" target="_blank">BFI Brief</a>
+      </div>
+      <div class="paper-journal"><span class="status">Revision requested,</span> Journal of Financial Economics</div>
+      <div class="paper-media">Featured in: <a href="https://www.callawayclimateinsights.com/p/new-evidence-the-greenium-exists" target="_blank">Mark Hulbert</a></div>
+      <div class="paper-award"><a href="https://www.kellogg.northwestern.edu/news/blog/2024/12/18/moskowitz-prize-2024/" target="_blank">2024 Moskowitz Prize</a> · <a href="https://www.fese.eu/news/press-release-for-the-first-time-the-fese-de-la-vega-prize-is-awarded-to-two-winners/" target="_blank">2025 De La Vega Prize</a></div>
+      <div class="paper-abstract">Green firms think their cost of capital is substantially lower than brown firms do. The difference incentivizes firms to invest in the green transition. See <a href="https://costofcapital.org/" target="_blank">costofcapital.org</a>.</div>
+    </div>
+
+    <h2>Publications</h2>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://ebenlazarus.github.io/ForwardExpectations.pdf" target="_blank">Forward Return Expectations</a></span><span class="sep">·</span>with <span class="coauthors">Mihir Gandhi</span> and <span class="coauthors">Eben Lazarus</span><span class="sep">·</span>April 2026<span class="sep">·</span><a href="https://ebenlazarus.github.io/FE_appendix.pdf" target="_blank">Appendix</a>&thinsp;<a href="https://ebenlazarus.github.io/FE_slides_0923.pdf" target="_blank">Slides</a>
+      </div>
+      <div class="paper-journal"><span class="status">Conditionally accepted,</span> Review of Financial Studies</div>
+      <div class="paper-abstract">Investors overestimate forward expected returns during market crashes. Such overestimation implies that stock markets drop more than they should during crises, explaining half the drop during the GFC and all of the drop during Covid-19.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2025/03/GormsenHuberCDR.pdf" target="_blank">Corporate Discount Rates</a></span><span class="sep">·</span>with <span class="coauthors">Kilian Huber</span><span class="sep">·</span><a href="https://kilianhuber.github.io/website/GormsenHuberCDRSlides.pdf" target="_blank">Slides</a>&thinsp;<a href="https://bfi.uchicago.edu/wp-content/uploads/2024/11/Corporate-Discount-Rates.pdf" target="_blank">BFI Brief</a>
+      </div>
+      <div class="paper-journal">American Economic Review<span class="jdetail">, 2025, 115(6), 2001–2049</span></div>
+      <div class="paper-media">Featured in: <a href="https://www.barrons.com/articles/interest-rates-economy-federal-reserve-4814ad23" target="_blank">Barron's</a>, <a href="https://www.bloomberg.com/opinion/articles/2023-06-21/big-firms-want-normal-crypto-markets" target="_blank">Matt Levine</a>, <a href="https://www.ft.com/content/65b0976c-3bc9-4305-ba8a-5ab2cec22d62" target="_blank">FT</a>, <a href="https://cepr.org/voxeu/columns/firms-required-returns-capital-and-missing-investment-puzzle" target="_blank">VoxEU</a>, <a href="https://www.thediff.co/archive/longreads-open-thread-28/" target="_blank">Hobart</a></div>
+      <div class="paper-abstract">New dataset on firms’ perceived cost of capital and discount rates. Firms’ discount rates do not move one-for-one with the perceived cost of capital, leading to time-varying discount rate wedges that account for low US investment in recent decades. See <a href="https://costofcapital.org/" target="_blank">costofcapital.org</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2025/07/GormsenJensen2025.pdf" target="_blank">Higher-Moment Risk</a></span><span class="sep">·</span>with <span class="coauthors">Christian Skov Jensen</span>
+      </div>
+      <div class="paper-journal"><span class="status">Forthcoming,</span> Journal of Finance</div>
+      <div class="paper-abstract">New stylized facts about variation in higher-order moments of stock returns. They are inconsistent with leading disaster-based models and alter our understanding of tail risk.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0304405X24001569" target="_blank">Conditional Risk</a></span><span class="sep">·</span>with <span class="coauthors">Christian Skov Jensen</span><span class="sep">·</span><a href="https://voices.uchicago.edu/gormsen/files/2025/03/ConditionalRiskSlides.pdf" target="_blank">Slides</a>
+      </div>
+      <div class="paper-journal">Journal of Financial Economics<span class="jdetail">, 2024, 162</span></div>
+      <div class="paper-abstract">Conventional wisdom on conditional risk is flawed: time variation in betas could explain all of the alpha to trading strategies — and in practice has a meaningful impact.</div>
+      <div class="paper-award">Roger F. Murray Prize 2025</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://voices.uchicago.edu/gormsen/files/2024/03/CGM_REStud_2024forthcoming-102678cc5e1a1969.pdf" target="_blank">Selfish Corporations</a></span><span class="sep">·</span>with <span class="coauthors">Emanuele Colonnelli</span> and <span class="coauthors">Tim McQuade</span><span class="sep">·</span><a href="https://voices.uchicago.edu/gormsen/videos-for-selfish-corporations/" target="_blank">Survey Videos</a>
+      </div>
+      <div class="paper-journal">Review of Economic Studies<span class="jdetail">, 2024, 91(3), 1498–1536</span></div>
+      <div class="paper-abstract">The public demands corporations to behave better within society. This big business discontent can influence public support for economic policies and cause firms’ political communication to backfire.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4248500" target="_blank">Financial Markets and the COVID-19 Pandemic</a></span><span class="sep">·</span>with <span class="coauthors">Ralph S. J. Koijen</span>
+      </div>
+      <div class="paper-journal">Annual Review of Financial Economics<span class="jdetail">, 2023, 15, 69–89</span></div>
+      <div class="paper-abstract">We review the literature on the impact of COVID-19 on financial markets and argue that new asset pricing models are needed to account for the price fluctuations observed during the pandemic.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3359027" target="_blank">Duration-Driven Returns</a></span><span class="sep">·</span>with <span class="coauthors">Eben Lazarus</span>
+      </div>
+      <div class="paper-journal">Journal of Finance<span class="jdetail">, 2023, 78(3), 1393–1447</span></div>
+      <div class="paper-media">Featured in: <a href="https://www.ft.com/content/6a38a189-70af-4c58-b24b-dbae36d8da8d" target="_blank">FT</a>, <a href="https://alphaarchitect.com/2019/09/26/the-short-duration-premium/" target="_blank">Alpha Architect</a></div>
+      <div class="paper-abstract">The major equity risk factors invest in short-duration firms and can be explained by models that produce premia on near-future cash flows. New data provide identification.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2989695" target="_blank">Time Variation of the Equity Term Structure</a></span>
+      </div>
+      <div class="paper-journal">Journal of Finance<span class="jdetail">, 2021, 76(4), 1959–1999</span></div>
+      <div class="paper-abstract">I study and reconcile time variation in the equity term structures of returns and yields, and introduce a new model to account for the facts.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3753691" target="_blank">Implied Dividend Volatility and Expected Growth</a></span><span class="sep">·</span>with <span class="coauthors">Ralph S. J. Koijen</span> and <span class="coauthors">Ian W. Martin</span>
+      </div>
+      <div class="paper-journal">AEA Papers &amp; Proceedings<span class="jdetail">, 2021, 111, 361–365</span></div>
+      <div class="paper-abstract">Implied volatility from dividend derivatives can be used to estimate growth uncertainty, expected returns on dividend claims, and expected growth in real time.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3555917" target="_blank">Coronavirus: Impact on Stock Prices and Growth Expectations</a></span><span class="sep">·</span>with <span class="coauthors">Ralph S. J. Koijen</span>
+      </div>
+      <div class="paper-journal">Review of Asset Pricing Studies<span class="jdetail">, 2020, 10(4), 574–597</span></div>
+      <div class="paper-media">Featured in: <a href="https://www.forbes.com/sites/simonmoore/2020/05/18/researchers-examine-the-markets-covid-19-swings-heres-what-they-found/" target="_blank">Forbes</a>, <a href="https://www.ft.com/content/cd8e2299-161b-4f17-adad-ac6d8a730049" target="_blank">FT</a>, <a href="https://voxeu.org/article/coronavirus-impact-stock-prices-and-growth-expectations" target="_blank">Vox</a>, <a href="https://seekingalpha.com/news/3555897-university-of-chicago-paper-sees-u-s-dividend-annual-growth-sinking-28" target="_blank">Seeking Alpha</a>, <a href="https://promarket.org/2020/03/23/how-to-interpret-financial-market-movements-to-predict-the-impact-of-coronavirus-on-gdp/" target="_blank">ProMarket</a></div>
+      <div class="paper-abstract">Methods for understanding movements in stock prices and recovering growth expectations in real time. The stock market crash around the coronavirus outbreak was too severe to be justified by the drop in firms’ expected earnings.</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-head">
+        <span class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0304405X1930176X" target="_blank">Betting Against Correlation: Testing Theories of the Low-Risk Effect</a></span><span class="sep">·</span>with <span class="coauthors">Cliff Asness</span>, <span class="coauthors">Andrea Frazzini</span>, and <span class="coauthors">Lasse Heje Pedersen</span>
+      </div>
+      <div class="paper-journal">Journal of Financial Economics<span class="jdetail">, 2020, 135(3), 629–652</span></div>
+      <div class="paper-media">Featured in: <a href="https://www.wsj.com/articles/kraft-unilever-deal-is-off-but-warren-buffetts-anomalies-live-on-1487623652" target="_blank">WSJ</a>, <a href="https://www.institutionalinvestor.com/article/b1505q0wvs8233/cliff-asness-investors-fear-of-leverage-drives-low-risk-effect" target="_blank">Institutional Investor</a>, <a href="https://alphaarchitect.com/2017/02/21/swedroe-insights-explaining-the-low-risk-effect/" target="_blank">Alpha Architect</a>, <a href="https://www.barrons.com/articles/cliff-asness-untangles-beta-vs-volatility-1487095164" target="_blank">Barron's</a>, <a href="https://www.aqr.com/Insights/Perspectives/Betting-Against-Correlation" target="_blank">Cliff's Perspective</a></div>
+      <div class="paper-award">Fama-DFA Prize 2020 · Roger F. Murray Prize 2018</div>
+      <div class="paper-abstract">Two new factors separate competing theories for the low-risk effect: BAC is strong, consistent with leverage constraints; SMAX works too, consistent with lottery demand.</div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
