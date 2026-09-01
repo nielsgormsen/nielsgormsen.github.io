@@ -1,0 +1,625 @@
+<title>Top Finance Graduates</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --baseline:#c3c2b7; --ring:rgba(11,11,11,.10); --accent:#1c5cab;
+  --accent-ink:#1c5cab; --hover:rgba(11,11,11,.035);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --baseline:#383835; --ring:rgba(255,255,255,.10); --accent:#6da7ec;
+    --accent-ink:#86b6ef; --hover:rgba(255,255,255,.05);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --baseline:#383835; --ring:rgba(255,255,255,.10); --accent:#6da7ec;
+  --accent-ink:#86b6ef; --hover:rgba(255,255,255,.05);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 28px 72px}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:26px}
+.mast .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}
+.mast h1{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:clamp(28px,4.5vw,44px);
+  line-height:1.08;margin:0 0 10px;text-wrap:balance}
+.mast p{max-width:68ch;color:var(--ink-2);margin:0;font-size:14.5px}
+
+/* Tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 26px}
+.tile{background:var(--surface);border:1px solid var(--ring);border-radius:6px;padding:14px 16px}
+.tile .v{font-size:26px;font-weight:650;line-height:1.1}
+.tile .l{font-size:11.5px;color:var(--ink-2);margin-top:4px}
+.tile .s{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Charts */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+@media (max-width:820px){.charts{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:6px;padding:16px 18px 14px}
+.card h2{font-family:"Source Serif 4",Georgia,serif;font-size:16px;font-weight:600;margin:0 0 2px}
+.card .sub{font-size:12px;color:var(--ink-2);margin:0 0 14px}
+.hbars{display:flex;flex-direction:column;gap:9px}
+.hb{display:grid;grid-template-columns:190px 1fr 34px;align-items:center;gap:10px;font-size:12.5px}
+.hb .bt{color:var(--ink);display:flex;align-items:center;gap:7px;min-width:0}
+.hb .bt span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.hb .tr{background:none;height:16px;position:relative}
+.hb .fill{height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.hb .bv{text-align:right;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.stackwrap{overflow-x:auto}
+.stack{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;align-items:end;height:150px;min-width:420px;
+  border-bottom:1px solid var(--baseline);padding-bottom:0}
+.col{display:flex;flex-direction:column-reverse;gap:2px;height:100%;justify-content:flex-start;position:relative;cursor:default}
+.seg{width:100%;border-radius:2px}
+.col:hover .seg{filter:brightness(1.06)}
+.xlab{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;min-width:420px;margin-top:6px}
+.xlab div{text-align:center;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend button{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--ink-2);
+  font:inherit;cursor:pointer;padding:2px 4px;border-radius:4px}
+.legend button:hover{background:var(--hover)}
+.legend button.off{opacity:.4}
+.legend button.off .lbl{text-decoration:line-through}
+.tip{position:fixed;z-index:30;background:var(--surface);border:1px solid var(--ring);border-radius:5px;
+  padding:7px 10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,.14);pointer-events:none;display:none;max-width:260px}
+.tip b{font-weight:650}
+
+/* Taxonomy note */
+.taxo{background:var(--surface);border:1px solid var(--ring);border-radius:6px;padding:16px 18px;margin-bottom:26px}
+.taxo h2{font-family:"Source Serif 4",Georgia,serif;font-size:16px;font-weight:600;margin:0 0 8px}
+.taxo p{margin:0 0 10px;color:var(--ink-2);font-size:13px;max-width:90ch}
+.taxo .defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px 22px;font-size:12.5px}
+.taxo .defs div{display:flex;gap:8px;align-items:baseline}
+.taxo .defs .dot{position:relative;top:0}
+.taxo .defs b{font-weight:600}
+.taxo .defs span.d{color:var(--ink-2)}
+
+/* Filters */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.filters select,.filters input{background:var(--surface);color:var(--ink);border:1px solid var(--ring);
+  border-radius:5px;padding:7px 9px;font:inherit;font-size:13px}
+.filters input{flex:1;min-width:180px}
+.filters .count{font-size:12.5px;color:var(--ink-2);margin-left:auto;font-variant-numeric:tabular-nums}
+.filters button{background:none;border:none;color:var(--accent-ink);font:inherit;font-size:12.5px;cursor:pointer;padding:4px}
+
+/* Table */
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--ring);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:980px;font-size:13px}
+thead th{position:sticky;top:0;background:var(--surface);text-align:left;font-size:11px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--ink-2);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--baseline);
+  cursor:pointer;user-select:none;white-space:nowrap}
+thead th .arr{color:var(--accent-ink)}
+tbody td{padding:10px 12px;border-bottom:1px solid var(--grid);vertical-align:top}
+tbody tr.main{cursor:pointer}
+tbody tr.main:hover{background:var(--hover)}
+tbody tr:last-child td{border-bottom:none}
+td.yr{font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap}
+.pname{font-weight:600}
+.seru{display:inline-block;margin-left:6px;color:#0ca30c;font-weight:700;cursor:help}
+.jmpt{color:var(--ink-2);font-size:12.5px;font-style:italic;margin-top:2px;max-width:46ch}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap;color:var(--ink);margin-right:10px}
+.mchip{font-size:11px;border:1px solid var(--ring);border-radius:10px;padding:2px 8px;color:var(--ink-2);white-space:nowrap}
+tr.detail td{background:var(--hover);font-size:12.5px;color:var(--ink-2);border-bottom:1px solid var(--grid)}
+tr.detail .note{max-width:100ch}
+tr.detail a{font-size:12px}
+.fieldcell{color:var(--ink-2);font-size:12.5px}
+
+/* Footer */
+.foot{margin-top:22px;font-size:12px;color:var(--muted);max-width:100ch}
+.foot a{color:var(--accent-ink)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:1px}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">AQR Top Finance Graduate Award · CBS 2013–2022 · HEC Paris 2023–2026</p>
+    <h1>Top Finance Graduates</h1>
+    <p>All 82 winners of the Top Finance Graduate Award since its first edition, cohorts 2013–2026: where they came from, where they
+    placed, what their job market paper did, and how its main contribution can be grouped. Contribution coding is
+    a descriptive classification of the JMP's primary and secondary contribution, based on the papers' own
+    abstracts — click any row for a one-line description and sources.</p>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="charts">
+    <div class="card">
+      <h2>Primary contribution of the JMP</h2>
+      <p class="sub">Number of winners by primary contribution group, all cohorts</p>
+      <div class="hbars" id="contribBars"></div>
+    </div>
+    <div class="card">
+      <h2>Empirical, theory, or both</h2>
+      <p class="sub">Method of the JMP by award cohort</p>
+      <div class="stackwrap">
+        <div class="stack" id="methodStack"></div>
+        <div class="xlab" id="methodX"></div>
+      </div>
+      <div class="legend" id="methodLegend"></div>
+    </div>
+    <div class="card" style="grid-column:1/-1">
+      <h2>Primary contribution over time</h2>
+      <p class="sub">Winners per cohort by the JMP's primary contribution group — 3-year centered moving average (raw counts in the tooltip)</p>
+      <div class="stackwrap"><div id="contribLines" style="min-width:560px"></div></div>
+      <div class="legend" id="contribLegend"></div>
+    </div>
+  </div>
+
+  <div class="taxo">
+    <h2>Contribution groups</h2>
+    <p>Each JMP gets one primary tag and, where clearly warranted, one secondary tag. The
+    <b>Data&nbsp;+&nbsp;model</b> column marks JMPs that combine somewhat new data with a model used to interpret
+    facts in that data (broadly construed) — 17 of the 82. The groups: </p>
+    <div class="defs" id="taxoDefs"></div>
+  </div>
+
+  <div class="filters">
+    <select id="fYear"></select>
+    <select id="fMethod"></select>
+    <select id="fContrib"></select>
+    <select id="fField"></select>
+    <input id="fSearch" type="search" placeholder="Search name, school, paper title…" aria-label="Search">
+    <button id="fReset" type="button">Reset</button>
+    <span class="count" id="fCount"></span>
+  </div>
+
+  <div class="tablewrap">
+    <table id="tbl" aria-label="Award winners">
+      <thead><tr>
+        <th data-k="year">Year <span class="arr"></span></th>
+        <th data-k="name">Winner · JMP <span class="arr"></span></th>
+        <th data-k="phd">PhD <span class="arr"></span></th>
+        <th data-k="place">First placement <span class="arr"></span></th>
+        <th data-k="field">Field</th>
+        <th data-k="method">Method <span class="arr"></span></th>
+        <th data-k="seru" title="Somewhat new data + a model used to interpret it">Data + model <span class="arr"></span></th>
+        <th>Contribution</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <p class="foot">Winner lists: CBS Center for Financial Frictions award pages 2013–2021 (via the
+  <a href="https://www.tilmeld.dk/financegradaward2022/previous-winners">2022 award site's archive</a>),
+  <a href="https://www.aqr.com/Our-Firm/News/2022/2022-AQR-Top-Finance-Graduate-Award-Winners-Announced">AQR 2022</a>, and HEC Paris award pages
+  <a href="https://www.hec.edu/en/top-finance-graduate-award-hec-paris-program">2023</a>,
+  <a href="https://www.hec.edu/en/school/news/top-finance-graduate-award-2024-celebrating-future-finance">2024</a>,
+  <a href="https://www.hec.edu/en/faculty-research/events/top-finance-graduate-award-2025-hec-paris">2025</a>,
+  <a href="https://www.hec.edu/en/faculty-research/events/top-finance-graduate-award-2026-hec-paris">2026</a>.
+  JMP details from winners' personal pages and SSRN. Placements are first academic placements; a few winners have
+  since moved (noted in row details where known). Method and contribution coding is descriptive and adjustable.</p>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+/* ---------- data ---------- */
+/* method: E empirical, T theory, B both.  c1 primary contribution, c2 secondary (or null).
+   Contribution codes: D new data & measurement, F new stylized fact, I causal identification,
+   S structural quantification, T theory & new mechanism, M new method. */
+const CODES = {
+  D:{name:"New data & measurement", color:"--s1", def:"a novel dataset, digitization, or measurement of something previously unmeasured is the central asset"},
+  F:{name:"New stylized fact",      color:"--s2", def:"documents a pattern that reorients how an area is understood"},
+  I:{name:"Causal identification",  color:"--s3", def:"a quasi-experiment, natural experiment, or RCT answering a causal question"},
+  S:{name:"Structural quantification", color:"--s4", def:"an estimated or calibrated model used to separate mechanisms and run counterfactuals"},
+  T:{name:"Theory & new mechanism", color:"--s5", def:"a formal model introducing a mechanism or normative analysis"},
+  M:{name:"New method",             color:"--s6", def:"an econometric, ML, or measurement technique is itself the contribution"}
+};
+const METHODS = {E:"Empirical", T:"Theory", B:"Both"};
+
+const DATA = [
+/* 2013 */
+{year:2013,name:"Jean-Noël Barrot",phd:"HEC Paris",place:"MIT Sloan",jmp:"Financial Strength and Trade Credit Provision: Evidence from Trucking Firms",field:["Corporate finance","Credit"],method:"E",c1:"I",c2:null,
+ note:"Uses a French regulatory change restricting payment terms in trucking to show that trade credit provision is a competitive burden for financially weak firms, with entry and survival effects. Published in the Journal of Finance (2016).",url:""},
+{year:2013,name:"Gabriel Chodorow-Reich",phd:"Berkeley",place:"Harvard (Econ)",jmp:"The Employment Effects of Credit Market Disruptions: Firm-level Evidence from the 2008–09 Financial Crisis",field:["Banking","Macro-finance"],method:"E",c1:"I",c2:null,
+ note:"Links firms to their pre-Lehman syndicate lenders and uses lender health as variation in credit supply, showing credit disruptions explain a large share of the employment collapse at small and medium firms. Published in the QJE (2014).",url:""},
+{year:2013,name:"Timothy McQuade",phd:"Harvard",place:"Stanford GSB",jmp:"Stochastic Volatility and Asset Pricing Puzzles",field:["Asset pricing"],method:"T",c1:"T",c2:null,
+ note:"A production-based asset pricing model with stochastic volatility solved with new perturbation methods, addressing value/growth and volatility-related pricing puzzles.",url:""},
+{year:2013,name:"Marina Niessner",phd:"Chicago",place:"Yale SOM",jmp:"Strategic Disclosure Timing and Insider Trading",field:["Corporate finance","Information"],method:"E",c1:"F",c2:null,
+ note:"Documents that firms time negative disclosures to periods of low investor attention (e.g. Fridays) and links the timing to insider trading incentives.",url:""},
+{year:2013,name:"Felipe Varas",phd:"Stanford GSB",place:"Duke Fuqua",jmp:"Contracting Timely Delivery with Hard to Verify Quality",field:["Corporate finance","Contracting"],method:"T",c1:"T",c2:null,
+ note:"A dynamic contracting model of delivering projects when quality is hard to verify, characterizing how deadlines and payment structures trade off speed against quality.",url:""},
+/* 2014 */
+{year:2014,name:"Eduardo Dávila",phd:"Harvard",place:"NYU Stern",jmp:"Optimal Financial Transaction Taxes",field:["Public finance","Asset pricing"],method:"T",c1:"T",c2:null,
+ note:"Characterizes the optimal financial transaction tax in a model where trading reflects both fundamental hedging and belief disagreement, balancing curbing speculation against liquidity costs.",url:""},
+{year:2014,name:"Maryam Farboodi",phd:"Chicago",place:"Princeton",jmp:"Intermediation and Voluntary Exposure to Counterparty Risk",field:["Banking","Networks"],method:"T",c1:"T",c2:null,
+ note:"A model of endogenous financial network formation in which banks voluntarily concentrate counterparty risk to capture intermediation rents, generating core-periphery structures and excessive fragility.",url:""},
+{year:2014,name:"François Geerolf",phd:"Sciences Po",place:"UCLA (Econ)",jmp:"A Theory of Power Law Distributions for the Returns to Capital and of the Credit Spread Puzzle",field:["Macro-finance","Asset pricing"],method:"T",c1:"T",c2:null,
+ note:"A theory generating power-law distributed returns to capital from heterogeneous leverage, offering an explanation of the credit spread puzzle.",url:""},
+{year:2014,name:"Boris Vallée",seru:1,phd:"HEC Paris",place:"Harvard Business School",jmp:"Catering to Investors through Product Complexity",field:["Household finance","Structured products"],method:"E",c1:"F",c2:"D",
+ note:"Uses data on retail structured products in Europe to document that issuers design complexity to cater to yield-seeking investors, with complexity rising when headline rates fall.",url:""},
+{year:2014,name:"Victoria Vanasco",phd:"Berkeley",place:"Stanford GSB",jmp:"Information Acquisition vs. Liquidity in Financial Markets",field:["Asset pricing","Information"],method:"T",c1:"T",c2:null,
+ note:"A model of the trade-off between originators' information acquisition and the liquidity of securitized claims, with implications for the design of asset-backed securities.",url:""},
+{year:2014,name:"Michael Weber",phd:"Berkeley Haas",place:"Chicago Booth",jmp:"Nominal Rigidities and Asset Pricing",field:["Asset pricing","Macro-finance"],method:"E",c1:"F",c2:null,
+ note:"Documents that firms with stickier output prices earn different expected returns and load differently on monetary policy risk, linking product-market rigidities to the cross-section of returns.",url:""},
+/* 2015 */
+{year:2015,name:"Svetlana Bryzgalova",phd:"LSE",place:"Stanford GSB",jmp:"Spurious Factors in Linear Asset Pricing Models",field:["Asset pricing","Econometrics"],method:"B",c1:"M",c2:null,
+ note:"Shows that weakly identified ('spurious') factors distort standard cross-sectional asset pricing tests and develops a shrinkage-based estimator that guards against them.",url:""},
+{year:2015,name:"Benjamin Hébert",phd:"Harvard",place:"Stanford GSB",jmp:"Moral Hazard and the Optimality of Debt",field:["Corporate finance","Contracting"],method:"T",c1:"T",c2:null,
+ note:"Shows debt is the optimal security design under a broad class of moral hazard problems in which the issuer controls both effort and risk, rationalizing debt's ubiquity.",url:""},
+{year:2015,name:"Sabrina Howell",phd:"Harvard",place:"NYU Stern",jmp:"Financing Constraints as Barriers to Innovation: Evidence from R&D Grants to Energy Startups",field:["Entrepreneurship","Innovation"],method:"E",c1:"I",c2:null,
+ note:"Uses scoring discontinuities in DOE grant assignment to estimate the causal effect of early-stage grants on startup innovation and survival. Published in the AER (2017).",url:""},
+{year:2015,name:"Lawrence Jin",phd:"Yale SOM",place:"Caltech",jmp:"A Speculative Asset Pricing Model of Financial Instability",field:["Behavioral","Asset pricing"],method:"T",c1:"T",c2:null,
+ note:"A model in which speculation driven by belief disagreement and leverage generates endogenous booms, busts, and financial instability.",url:""},
+{year:2015,name:"Lawrence Schmidt",phd:"UCSD",place:"Chicago (Econ)",jmp:"Climbing and Falling Off the Ladder: Asset Pricing Implications of Labor Market Event Risk",field:["Asset pricing","Labor"],method:"B",c1:"T",c2:"F",
+ note:"Documents that idiosyncratic tail risk in labor earnings rises sharply in downturns and builds an asset pricing model where this event risk commands a premium.",url:""},
+{year:2015,name:"Emil Siriwardane",phd:"NYU Stern",place:"Harvard Business School",jmp:"Concentrated Capital Losses and the Pricing of Corporate Credit Risk",field:["Credit","Intermediation"],method:"E",c1:"I",c2:"D",
+ note:"Uses regulatory DTCC data on the full network of CDS positions to show that capital losses of concentrated protection sellers move credit spreads, evidence of intermediary-based pricing. Published in the Journal of Finance (2019).",url:""},
+/* 2016 */
+{year:2016,name:"Asaf Bernstein",phd:"MIT Sloan",place:"Colorado Boulder",jmp:"Household Debt Overhang and Labor Supply",field:["Household finance","Labor"],method:"E",c1:"I",c2:null,
+ note:"Uses variation in negative home equity driven by purchase timing to show household debt overhang reduces labor supply, identifying a household-side debt overhang channel.",url:""},
+{year:2016,name:"Arpit Gupta",phd:"Columbia GSB",place:"NYU Stern",jmp:"Foreclosure Contagion and the Neighborhood Spillover Effects of Mortgage Defaults",field:["Household finance","Real estate"],method:"E",c1:"I",c2:null,
+ note:"Uses quasi-random judicial assignment of foreclosure cases to estimate how foreclosures spill over to neighbors' default and prices, quantifying foreclosure contagion.",url:""},
+{year:2016,name:"Elisabeth Kempf",phd:"Tilburg",place:"Chicago Booth",jmp:"The Job Rating Game: The Effects of Revolving Doors on Analyst Incentives",field:["Intermediation","Corporate finance"],method:"E",c1:"I",c2:"F",
+ note:"Shows credit analysts who later move to investment banks issue more issuer-friendly ratings beforehand, documenting how revolving-door career concerns distort ratings.",url:""},
+{year:2016,name:"Song Ma",phd:"Duke Fuqua",place:"Yale SOM",jmp:"The Life Cycle of Corporate Venture Capital",field:["Entrepreneurship","Corporate finance"],method:"E",c1:"F",c2:"D",
+ note:"Assembles data on corporate venture capital programs to document their life cycle: firms open CVC units after negative innovation shocks and wind them down as internal innovation recovers. Published in the RFS (2020).",url:""},
+{year:2016,name:"David Schoenherr",phd:"London Business School",place:"Princeton",jmp:"Political Connections and Allocative Distortions",field:["Political economy","Corporate finance"],method:"E",c1:"I",c2:null,
+ note:"Uses Korean procurement and lending data around a political turnover to show connected firms win more government business with worse execution, quantifying allocative costs of connections. Published in the Journal of Finance (2019).",url:""},
+{year:2016,name:"Michael Schwert",phd:"Stanford GSB",place:"Ohio State Fisher",jmp:"Bank Capital and Lending Relationships",field:["Banking","Corporate finance"],method:"E",c1:"F",c2:"I",
+ note:"Shows bank-dependent firms match with well-capitalized banks, and that this matching shapes how bank capital shocks pass through to borrowers. Published in the Journal of Finance (2018). (Later moved to Wharton.)",url:""},
+/* 2017 */
+{year:2017,name:"Simona Abis",phd:"INSEAD",place:"Columbia GSB",jmp:"Man vs. Machine: Quantitative and Discretionary Equity Management",field:["Asset pricing","Institutions"],method:"E",c1:"D",c2:"F",
+ note:"Uses machine-learning classification of mutual fund prospectuses to measure which funds are quantitative vs. discretionary, then documents systematic differences in their information processing and performance across states of the world.",url:""},
+{year:2017,name:"Jessica Jeffers",phd:"Wharton",place:"Chicago Booth",jmp:"The Impact of Restricting Labor Mobility on Corporate Investment and Entrepreneurship",field:["Corporate finance","Entrepreneurship"],method:"E",c1:"I",c2:null,
+ note:"Uses changes in the enforceability of non-compete agreements across US states, with LinkedIn-type employment histories, to estimate how restricting worker mobility shifts investment toward incumbents and away from new-firm entry.",url:""},
+{year:2017,name:"Moritz Lenel",phd:"Stanford",place:"Princeton",jmp:"Safe Assets, Collateralized Lending and Monetary Policy",field:["Macro-finance","Asset pricing"],method:"T",c1:"T",c2:"S",
+ note:"A quantitative model in which the supply of safe assets and collateralized lending chains determine bond premia and the transmission of monetary policy.",url:""},
+{year:2017,name:"Pascal Noel",phd:"Harvard",place:"Chicago Booth",jmp:"The Effect of Debt on Default and Consumption: Evidence from Housing Policy in the Great Recession",field:["Household finance"],method:"E",c1:"I",c2:"F",
+ note:"Uses quasi-experimental variation from mortgage modification programs (HAMP) to separate how payment reductions vs. principal reductions affect default and consumption, finding liquidity matters far more than debt overhang.",url:""},
+{year:2017,name:"Emily Williams",phd:"London Business School",place:"Harvard Business School",jmp:"Monetary Policy Transmission and the Funding Structure of Banks",field:["Banking"],method:"E",c1:"I",c2:null,
+ note:"Shows that banks' reliance on time deposits vs. core deposits generates cross-sectional differences in how monetary policy passes through to lending, using within-bank variation across US branches.",url:""},
+{year:2017,name:"Alexander K. Zentefis",phd:"Chicago Booth",place:"Yale SOM",jmp:"Bank Net Worth and Frustrated Monetary Policy",field:["Banking","Macro-finance"],method:"T",c1:"T",c2:null,
+ note:"A model in which low bank net worth blunts the transmission of monetary policy: rate cuts fail to stimulate lending when bank equity is impaired.",url:""},
+/* 2018 */
+{year:2018,name:"Laura Blattner",phd:"Harvard",place:"Stanford GSB",jmp:"When Losses Turn Into Loans: The Cost of Undercapitalized Banks",field:["Banking"],method:"E",c1:"I",c2:"D",
+ note:"Uses supervisory loan-level data from Portugal and a regulatory capital shock to show undercapitalized banks misreport loan quality and 'evergreen' loans to weak firms, with measurable costs for aggregate productivity.",url:""},
+{year:2018,name:"Emanuele Colonnelli",phd:"Stanford",place:"Chicago Booth",jmp:"Corruption and Firms: Evidence from Randomized Audits in Brazil",field:["Corporate finance","Development"],method:"E",c1:"I",c2:null,
+ note:"Uses Brazil's randomized municipal anti-corruption audits to estimate the causal effect of reduced corruption on local firm growth and government-dependent sectors.",url:""},
+{year:2018,name:"Niels Joachim Gormsen",phd:"Copenhagen Business School",place:"Chicago Booth",jmp:"Time Variation of the Equity Term Structure",field:["Asset pricing"],method:"E",c1:"F",c2:null,
+ note:"Documents that the slope of the equity term structure varies over the business cycle — flat or downward in good times, upward in bad times — a fact that disciplines leading asset pricing models. Published in the Journal of Finance (2021).",url:""},
+{year:2018,name:"Kilian Huber",phd:"LSE",place:"Chicago Booth",jmp:"Are Bigger Banks Better? Firm-Level Evidence from Germany",field:["Banking","Macro-finance"],method:"E",c1:"I",c2:null,
+ note:"Uses historical episodes of German bank consolidation as natural experiments to estimate how bank size affects the firms that borrow from them, finding little evidence that bigger banks improve firm outcomes. Published in the Journal of Political Economy (2021).",url:""},
+{year:2018,name:"Yiming Ma",seru:1,phd:"Stanford GSB",place:"Columbia GSB",jmp:"Intermediation in the Interbank Lending Market",field:["Banking","Intermediation"],method:"B",c1:"S",c2:"D",
+ note:"Combines interbank lending data with a structural model of the over-the-counter interbank market to quantify how intermediation chains form and how they transmit funding shocks.",url:""},
+{year:2018,name:"Yueran Ma",phd:"Harvard",place:"Chicago Booth",jmp:"Low Interest Rates and Risk Taking: Evidence from Individual Investment Decisions",field:["Behavioral","Household finance"],method:"E",c1:"F",c2:"I",
+ note:"Uses randomized experiments plus observational data to document 'reaching for yield': at low rates individuals allocate substantially more to risky assets than benchmark theory predicts, with reference-dependence as the mechanism. Published in the Review of Financial Studies.",url:""},
+{year:2018,name:"Scott Nelson",seru:1,phd:"MIT",place:"Chicago Booth",jmp:"Private Information and Price Regulation in the US Credit Card Market",field:["Household finance","Credit"],method:"B",c1:"S",c2:"D",
+ note:"Uses near-universe credit card account data around the CARD Act to estimate a structural model of pricing under adverse selection, quantifying the trade-off between regulation-induced pooling and screening. Published in Econometrica (2025).",url:""},
+/* 2019 */
+{year:2019,name:"Gregory Buchak",seru:1,phd:"Chicago Booth",place:"Stanford GSB",jmp:"Financing the Gig Economy",field:["Household finance","Fintech"],method:"B",c1:"S",c2:"D",
+ note:"Links the staggered rollout of ride-sharing to auto lending data, documents how gig work changes households' credit demand and labor supply, and estimates a structural model of the joint work/borrowing decision. Published in the Journal of Finance (2024).",url:""},
+{year:2019,name:"Lorena Keller",phd:"Northwestern Kellogg",place:"Wharton",jmp:"Capital Controls and Risk Misallocation: Evidence from a Natural Experiment",field:["International","Banking"],method:"E",c1:"I",c2:null,
+ note:"Uses a Peruvian capital-control policy as a natural experiment to show how limiting banks' FX positions shifts currency risk onto firms less able to bear it.",url:""},
+{year:2019,name:"Claudia Robles-Garcia",seru:1,phd:"LSE",place:"Stanford GSB",jmp:"Competition and Incentives in Mortgage Markets: The Role of Brokers",field:["Household finance","IO"],method:"B",c1:"S",c2:"D",
+ note:"Uses UK regulatory data on mortgage originations to estimate a structural model of broker intermediation, quantifying how commission structures distort advice and what counterfactual regulation would do.",url:""},
+{year:2019,name:"Olivier Wang",phd:"MIT",place:"NYU Stern",jmp:"Banks, Low Interest Rates, and Monetary Policy Transmission",field:["Banking","Macro-finance"],method:"T",c1:"T",c2:"S",
+ note:"A model of how persistently low interest rates erode bank margins and weaken the bank lending channel, with quantification of the 'reversal' region where cuts become contractionary.",url:""},
+{year:2019,name:"Chenzi Xu",phd:"Harvard",place:"Stanford GSB",jmp:"Reshaping Global Trade: The Immediate and Long-Run Effects of Bank Failures",field:["Banking","International","Financial history"],method:"E",c1:"D",c2:"I",
+ note:"Hand-collects historical data around the 1866 London banking crisis to trace how the failure of specific trade-financing banks reshaped countries' exports for decades. Published in the QJE (2022).",url:""},
+{year:2019,name:"Anthony Lee Zhang",phd:"Stanford GSB",place:"Chicago Booth",jmp:"Competition and Manipulation in Derivative Contract Markets",field:["Market design","Asset pricing"],method:"T",c1:"T",c2:"S",
+ note:"A model of benchmark manipulation in cash-settled derivative markets, characterizing when contract markets are manipulable and how contract design limits it, with calibration to LIBOR-style settings.",url:""},
+/* 2020 */
+{year:2020,name:"Samuel Antill",phd:"Stanford GSB",place:"Harvard Business School",jmp:"Do the Right Firms Survive Bankruptcy?",field:["Corporate finance","Credit"],method:"B",c1:"S",c2:null,
+ note:"Estimates a structural model of the Chapter 11 liquidation-vs-reorganization decision using US bankruptcy filings, quantifying how often the 'wrong' firms are liquidated and the creditor losses this creates.",url:""},
+{year:2020,name:"Nuno Clara",seru:1,phd:"London Business School",place:"Duke Fuqua",jmp:"Demand Elasticities, Nominal Rigidities and Asset Prices",field:["Macro-finance","Asset pricing"],method:"B",c1:"S",c2:"D",
+ note:"Estimates product-level demand elasticities from online retail data and embeds them in a production-based asset pricing model, linking price stickiness at the product level to firms' risk and expected returns.",url:""},
+{year:2020,name:"Christopher Clayton",phd:"Harvard",place:"Yale SOM",jmp:"Multinational Banks and Financial Stability",field:["Banking","International","Regulation"],method:"T",c1:"T",c2:null,
+ note:"A theory of regulating multinational banks when national regulators act non-cooperatively, characterizing regulatory spillovers and the gains from coordination.",url:""},
+{year:2020,name:"Rebecca De Simone",phd:"Columbia GSB",place:"London Business School",jmp:"Financial and Real Effects of Government Monitoring: Evidence from Commercial Bank Loans",field:["Banking","Development"],method:"E",c1:"I",c2:"D",
+ note:"Uses Ecuadorian tax-audit assignment and a credit registry to show government monitoring of firms improves their loan terms — banks treat audits as certification — with real investment effects.",url:""},
+{year:2020,name:"Huan Tang",phd:"HEC Paris",place:"LSE",jmp:"The Value of Privacy: Evidence from Online Borrowers",field:["Fintech","Household finance"],method:"E",c1:"I",c2:"F",
+ note:"Uses discontinuities in a large fintech lender's application process to estimate how much borrowers value data privacy, putting a revealed-preference price on personal data disclosure.",url:""},
+{year:2020,name:"Quentin Vandeweyer",phd:"Sciences Po",place:"Chicago Booth",jmp:"Treasury Debt and the Pricing of Short-Term Assets",field:["Asset pricing","Monetary"],method:"B",c1:"T",c2:"F",
+ note:"A model of money-market pricing in which the supply of Treasury debt and central-bank reserves jointly determine short-rate spreads, matched to post-crisis money-market evidence.",url:""},
+/* 2021 */
+{year:2021,name:"Lira Mota",seru:1,phd:"Columbia GSB",place:"MIT Sloan",jmp:"The Corporate Supply of (Quasi) Safe Assets",field:["Corporate finance","Asset pricing"],method:"B",c1:"D",c2:"F",
+ note:"Measures the safety premium firms earn by issuing near-safe debt, documents which corporations supply quasi-safe assets and when, and interprets the supply response with a model of debt structure.",url:""},
+{year:2021,name:"Jian (Jane) Li",phd:"Chicago (JPFE)",place:"Columbia GSB",jmp:"The Importance of Investor Heterogeneity: An Examination of the Corporate Bond Market",field:["Asset pricing","Intermediation"],method:"B",c1:"S",c2:"F",
+ note:"Documents how heterogeneous institutional investors (insurers, funds, dealers) price corporate bonds differently and estimates a model where investor composition drives credit market fragility and pricing.",url:""},
+{year:2021,name:"Simon Mayer",phd:"Erasmus Rotterdam",place:"HEC Paris",jmp:"Financing Breakthroughs under Failure Risk",field:["Corporate finance","Contracting"],method:"T",c1:"T",c2:null,
+ note:"A continuous-time contracting model of financing innovation when projects can fail outright, characterizing how funding should be staged and how control rights shift as failure risk resolves. (Later moved to CMU Tepper.)",url:""},
+{year:2021,name:"Peter Maxted",phd:"Harvard",place:"Berkeley Haas",jmp:"A Macro-Finance Model with Sentiment",field:["Macro-finance","Behavioral"],method:"T",c1:"T",c2:"S",
+ note:"Embeds diagnostic expectations into a macro-finance model of intermediation, showing how sentiment amplifies credit cycles and generates boom-bust dynamics quantitatively consistent with the data.",url:""},
+/* 2022 */
+{year:2022,name:"Francesca Bastianello",phd:"Harvard",place:"Chicago Booth",jmp:"Partial Equilibrium Thinking, Extrapolation, and Bubbles",field:["Behavioral","Asset pricing"],method:"T",c1:"T",c2:null,
+ note:"A model in which traders infer information from prices but fail to account for others' trading ('partial equilibrium thinking'), microfounding extrapolation and generating bubbles and crashes within one framework.",url:"https://voices.uchicago.edu/bastianello/"},
+{year:2022,name:"Antonio Coppola",phd:"Harvard",place:"Stanford GSB",jmp:"In Safe Hands: The Financial and Real Impact of Investor Composition Over the Credit Cycle",field:["Credit","Intermediation"],method:"E",c1:"D",c2:"I",
+ note:"Builds security-level corporate bond holdings data and uses insurer allocation shocks to show bonds held by stable investors suffer shallower crisis drawdowns, with cheaper borrowing and higher investment for their issuers. (Moved to Chicago Booth in 2026.)",url:"https://www.antoniocoppola.org/"},
+{year:2022,name:"Noémie Pinardon-Touati",phd:"HEC Paris",place:"Columbia (Econ)",jmp:"The Crowding Out Effect of Local Government Debt: Micro- and Macro-Estimates",field:["Banking","Public finance"],method:"B",c1:"I",c2:"S",
+ note:"Uses the French credit register to show €1 of local-government bank borrowing crowds out ~€0.54 of corporate lending, then aggregates with a GE model of segmented banking to a €0.20 output loss per euro.",url:"https://npinardontouati.github.io/"},
+{year:2022,name:"Diego Känzig",phd:"London Business School",place:"Northwestern (Econ)",jmp:"The Unequal Economic Consequences of Carbon Pricing",field:["Climate finance","Macro-finance"],method:"E",c1:"I",c2:"D",
+ note:"Constructs a carbon-policy surprise series from high-frequency EUA futures moves around EU announcements; carbon shocks raise prices, cut emissions and activity, and hit low-income households hardest.",url:"https://dkaenzig.github.io/"},
+{year:2022,name:"Paul Fontanier",phd:"Harvard",place:"Yale SOM",jmp:"Optimal Policy for Behavioral Financial Crises",field:["Macro-finance","Behavioral","Regulation"],method:"T",c1:"T",c2:null,
+ note:"Derives optimal macroprudential policy when crises are amplified by biased beliefs, showing how belief distortions change standard prudential prescriptions. Published in the JFE (2025).",url:"https://paulfontanier.github.io/"},
+{year:2022,name:"Kerry Siani",seru:1,phd:"Columbia GSB",place:"MIT Sloan",jmp:"Raising Bond Capital in Segmented Markets",field:["Corporate finance","Credit"],method:"B",c1:"D",c2:"S",
+ note:"New micro data on corporate bond issuance combined with an equilibrium model of segmented primary/secondary markets; issuance premia spike in bad times and elastic short-term investors cushion issuance declines. Published in the RFS (2025).",url:"https://mitsloan.mit.edu/faculty/directory/kerry-y-siani"},
+/* 2023 */
+{year:2023,name:"Menaka Hampole",phd:"Northwestern Kellogg",place:"Yale SOM",jmp:"Financial Frictions and Human Capital Investments",field:["Household finance","Education"],method:"E",c1:"D",c2:"I",
+ note:"Merges commencement records for 700k+ students with credit bureau and resume data; staggered adoption of no-loan aid policies shows debt access shifts students' major choice, especially for low-income students.",url:"https://menakahampole.com/"},
+{year:2023,name:"Max Miller",seru:1,phd:"Wharton",place:"Harvard Business School",jmp:"Who Values Democracy?",field:["Asset pricing","Political economy"],method:"B",c1:"D",c2:"I",
+ note:"Assembles ~200 years of stock market data for ~90 countries; democratizations (instrumented via a shift in Catholic doctrine) raise risk premia by crisis-sized magnitudes, with a redistribution-based model attributing half to taxation.",url:"https://www.max-miller.finance/"},
+{year:2023,name:"Indira Puri",phd:"MIT",place:"NYU Stern",jmp:"Simplicity and Risk",field:["Behavioral","Decision theory"],method:"B",c1:"T",c2:"F",
+ note:"Axiomatizes preference for simplicity (fewer outcomes) in risky choice and confirms complexity aversion in lab experiments, distinct from risk aversion, with implications for financial product design. Published in the Journal of Finance (2025).",url:"https://sites.google.com/view/indira-puri/"},
+{year:2023,name:"Nishant Vats",phd:"Chicago Booth",place:"WashU Olin",jmp:"What Does Financial Heterogeneity Say About the Transmission of Monetary Policy?",field:["Corporate finance","Monetary"],method:"B",c1:"I",c2:"S",
+ note:"Uses staggered US anti-recharacterization laws as collateral-constraint variation interacted with monetary shocks; a model quantifies how financial constraints shape monetary transmission to investment.",url:"https://nishvats.github.io/"},
+{year:2023,name:"Philippe van der Beck",phd:"EPFL / SFI",place:"Harvard Business School",jmp:"Flow-Driven ESG Returns",field:["Asset pricing","Sustainable finance"],method:"E",c1:"S",c2:"F",
+ note:"Estimates a demand-system asset pricing model on fund holdings and flows, showing ESG outperformance is largely price pressure from sustainable fund inflows rather than fundamentals.",url:"https://www.pvanderbeck.net/"},
+{year:2023,name:"Lulu Wang",seru:1,phd:"Stanford GSB",place:"Northwestern Kellogg",jmp:"Regulating Competing Payment Networks",field:["Payments","IO","Household finance"],method:"B",c1:"S",c2:"D",
+ note:"Estimates a structural two-sided market model of payment networks; consumers are ~10x more fee-sensitive than merchants, so competition fuels rewards rather than lower fees, and an interchange cap raises welfare.",url:"https://www.luluywang.com/"},
+/* 2024 */
+{year:2024,name:"Jacob Conway",phd:"Stanford",place:"Chicago Booth (Econ)",jmp:"Consuming Values",field:["Corporate finance","Political economy"],method:"E",c1:"F",c2:"D",
+ note:"Uses payment-card transaction data with ML-inferred consumer alignment to document that consumers reward (+19%) and punish (−12%) firms' public social stances, and that firms choose stances strategically.",url:"https://jacob-conway.com/"},
+{year:2024,name:"Taisiya Sikorskaya",phd:"London Business School",place:"Chicago Booth",jmp:"Institutional Investor Mandates, Securities Lending, and Short-Selling Constraints",field:["Microstructure","Institutions"],method:"E",c1:"I",c2:"F",
+ note:"Uses Russell index reconstitution with securities-lending data to show benchmarked capital simultaneously expands lending supply and inflates shorting costs. Published in the JFE.",url:"https://www.sikorskaya.net/"},
+{year:2024,name:"Tim de Silva",seru:1,phd:"MIT Sloan",place:"Stanford GSB",jmp:"Insurance versus Moral Hazard in Income-Contingent Student Loan Repayment",field:["Household finance"],method:"B",c1:"S",c2:"I",
+ note:"Australian administrative tax data show labor-supply bunching at repayment thresholds; a structural life-cycle model weighs the insurance value of income-contingent loans against moral hazard. Published in the QJE (2025).",url:"https://www.timdesilva.me/"},
+{year:2024,name:"Naz Koont",seru:1,phd:"Columbia GSB",place:"Stanford GSB",jmp:"The Digital Banking Revolution: Effects on Competition and Stability",field:["Banking","Fintech"],method:"B",c1:"D",c2:"S",
+ note:"Builds a new dataset of US banks' digital platform adoption, documents how digitalization reshapes deposit competition, and estimates a structural demand model to trace effects on market structure and stability.",url:"https://www.nazkoont.com/"},
+{year:2024,name:"Leland Bybee",phd:"Yale SOM",place:"Chicago Booth",jmp:"The Ghost in the Machine: Generating Beliefs with Large Language Models",field:["Asset pricing","ML & AI"],method:"E",c1:"M",c2:"F",
+ note:"Feeds ~120 years of news to LLMs to generate out-of-sample economic expectations that match survey beliefs — including their departures from rationality — and derives a sentiment measure predicting crash risk and returns.",url:"https://lelandbybee.com/"},
+{year:2024,name:"Julia Selgrad",phd:"NYU Stern",place:"Chicago Booth",jmp:"Testing the Portfolio Rebalancing Channel of Quantitative Easing",field:["Monetary","Asset pricing"],method:"B",c1:"I",c2:"S",
+ note:"Novel QE-surprise measures with holdings data show investors reallocate ~75% of QE-induced Treasury sales into similar-maturity corporate bonds, lowering yields and raising issuance; a preferred-habitat model rationalizes the substitution.",url:"https://www.juliaselgrad.com/"},
+/* 2025 */
+{year:2025,name:"Daniel Graves",phd:"Yale",place:"Harvard (Econ)",jmp:"What Lies Beneath Zero: Censoring, Demand Estimation, and Hidden Beliefs",field:["Asset pricing","Econometrics"],method:"B",c1:"M",c2:"F",
+ note:"Develops asset-demand estimation that corrects for 13F holdings being censored at zero, recovering 'hidden beliefs' from non-ownership that strongly predict returns where observed-holdings beliefs do not.",url:"https://sites.harvard.edu/daniel-graves/"},
+{year:2025,name:"Susan Cherry",phd:"Stanford GSB",place:"UT Austin McCombs",jmp:"The Impact of Rate Caps on Information, Market Structure, and Credit Access",field:["Household finance","Regulation"],method:"B",c1:"I",c2:"S",
+ note:"State-level enforcement of rate caps in the nonbank personal-loan market cuts credit access ~10% and drives lender exit; a structural model with adverse selection shows thin-file low-risk borrowers lose most.",url:"https://www.susan-cherry.com/"},
+{year:2025,name:"Suproteem Sarkar",phd:"Harvard",place:"Chicago Booth",jmp:"Economic Representations",field:["Asset pricing","ML & AI"],method:"E",c1:"M",c2:"F",
+ note:"Trains embeddings from financial news to quantify how markets categorize firms; representation shifts (e.g. around 'AI') predict valuations, comovement, and mispricing.",url:"https://suproteem.is/"},
+{year:2025,name:"Juan Antolin-Diaz",seru:1,phd:"London Business School",place:"MIT Sloan",jmp:"How Did Government Bonds Become Safe?",field:["Asset pricing","Macro-finance"],method:"B",c1:"F",c2:"M",
+ note:"A Bayesian dynamic factor model with narrative volatility identification on 12 countries (1955–2024) establishes that stock–bond comovement shifted regime simultaneously across countries, driven by intermediary flight-to-safety.",url:"https://www.juanantolindiaz.com/"},
+{year:2025,name:"James Paron",phd:"Wharton",place:"Stanford GSB",jmp:"The Wealth of Stagnation: Falling Growth, Rising Valuations",field:["Asset pricing","Growth"],method:"B",c1:"T",c2:"F",
+ note:"Documents falling R&D relative to firm value alongside rising M&A and concentrated valuation gains, and builds a Schumpeterian model in which declining innovation productivity jointly explains stagnant growth and booming valuations.",url:"https://jamesparon.com/"},
+{year:2025,name:"Leonardo D'Amico",seru:1,phd:"Harvard",place:"Chicago Booth (Econ)",jmp:"Capital Market Integration and Growth Across the United States",field:["Banking","Spatial macro"],method:"B",c1:"D",c2:"S",
+ note:"Digitizes US state-level banking data 1953–83, documents rate convergence as nominal rates rose, and embeds a banking model in a dynamic spatial model: integration explains up to a fifth of Sunbelt growth.",url:"https://leonardodamico.github.io/"},
+/* 2026 */
+{year:2026,name:"Nicolas Hommel",seru:1,phd:"Princeton",place:"MIT Sloan (2027)",jmp:"Firms' Foreign Exchange Hedging",field:["Corporate finance","International"],method:"B",c1:"D",c2:"S",
+ note:"Uses ~1.5m FX derivative contracts from EMIR filings for Eurozone firms and estimates a dynamic risk-management model: firms hedge 30–80% of exposure, driven by dividend smoothing and limited by adjustment costs.",url:"https://www.nicolashommel.com/"},
+{year:2026,name:"Ananya Kotia",phd:"LSE",place:"Stanford GSB (2027)",jmp:"When Competition Compels Change: Trade, Management, and Productivity",field:["Development","Corporate finance","Trade"],method:"E",c1:"I",c2:"D",
+ note:"India's WTO-mandated removal of import restrictions, merged with digitized records on 6m+ executives' family ties, shows import competition pushed family firms to professionalize management, raising productivity ~35%.",url:"https://ananyakotia.com/"},
+{year:2026,name:"Jessica Li",phd:"Chicago Booth",place:"Harvard Business School",jmp:"Complementarity of Bank and Market Debt in Dynamic Debt Structure",field:["Corporate finance","Intermediation"],method:"B",c1:"T",c2:"F",
+ note:"A dynamic model of jointly managing renegotiable bank debt and market debt, predicting strategic market-debt trades ahead of renegotiations — validated in firm data on debt repurchases.",url:"https://sites.google.com/view/jessicaliwebsite/home"},
+{year:2026,name:"Patrick Adams",seru:1,phd:"MIT Sloan",place:"Wharton",jmp:"Stocks for the Long Run or Liquidity? Tax Data Evidence and Portfolio Choice Implications",field:["Household finance","Asset pricing"],method:"B",c1:"F",c2:"S",
+ note:"US administrative tax returns show high-income working-age households liquidate stocks procyclically ($500–850 per $1,000 income loss); a life-cycle model implies lower optimal working-age equity shares.",url:"https://patrick-adams.com/"},
+{year:2026,name:"Oliver Xie",phd:"Stanford GSB",place:"MIT Sloan",jmp:"Financial Hedging and Optimal Currency of Invoicing",field:["International","Macro-finance"],method:"T",c1:"T",c2:null,
+ note:"A theory of currency invoicing when hedging is costly: the optimal invoicing currency reflects who can bear FX risk, and capital controls meant to curb dollar borrowing can push firms toward dollar invoicing.",url:"https://oliver-xie.com/"},
+{year:2026,name:"Sage Belz",seru:1,phd:"Harvard",place:"Northwestern Kellogg",jmp:"The Original Sin Revisited: Investor Composition and Sovereign Risk",field:["International","Sovereign debt"],method:"B",c1:"F",c2:"T",
+ note:"Combines emerging-market sovereign bond holdings data with a model of endogenous creditor composition: local-currency borrowing lowers default risk but heightens exposure to intermediary fire sales.",url:"https://sage-belz.github.io/"}
+];
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const cvar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* ---------- tiles ---------- */
+function buildTiles(){
+  const n = DATA.length;
+  const cnt = (arr)=>{const m={};arr.forEach(x=>m[x]=(m[x]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1]);};
+  const topPhd = cnt(DATA.map(d=>d.phd))[0];
+  const topPlace = cnt(DATA.map(d=>d.place.replace(/ \(.*\)| \d{4}.*/g,"").replace(" (Econ)","")))[0];
+  const structural = DATA.filter(d=>d.c1==="S"||d.c2==="S").length;
+  const pureTheory = DATA.filter(d=>d.method==="T").length;
+  const tiles = [
+    {v:n, l:"winners, cohorts 2013–2026", s:"4–7 per year"},
+    {v:topPhd[1], l:"PhDs from "+topPhd[0], s:"most common origin"},
+    {v:topPlace[1], l:"placed at "+topPlace[0], s:"most common destination"},
+    {v:Math.round(100*structural/n)+"%", l:"JMPs with a structural model", s:"primary or secondary"},
+    {v:Math.round(100*pureTheory/n)+"%", l:"pure theory JMPs", s:pureTheory+" of "+n}
+  ];
+  $("#tiles").innerHTML = tiles.map(t=>`<div class="tile"><div class="v">${t.v}</div><div class="l">${esc(String(t.l))}</div><div class="s">${esc(t.s)}</div></div>`).join("");
+}
+
+/* ---------- charts ---------- */
+const tip = $("#tip");
+function showTip(e,html){tip.innerHTML=html;tip.style.display="block";moveTip(e);}
+function moveTip(e){const w=tip.offsetWidth,h=tip.offsetHeight;
+  let x=e.clientX+14,y=e.clientY+12;
+  if(x+w>innerWidth-8)x=e.clientX-w-10; if(y+h>innerHeight-8)y=e.clientY-h-10;
+  tip.style.left=x+"px";tip.style.top=y+"px";}
+function hideTip(){tip.style.display="none";}
+
+function buildContribChart(){
+  const order = ["D","F","I","S","T","M"];
+  const counts = order.map(k=>({k, n:DATA.filter(d=>d.c1===k).length}));
+  const max = Math.max(...counts.map(c=>c.n));
+  $("#contribBars").innerHTML = counts.map(c=>{
+    const col = CODES[c.k];
+    return `<div class="hb" data-k="${c.k}">
+      <div class="bt"><span class="dot" style="background:var(${col.color})"></span><span>${col.name}</span></div>
+      <div class="tr"><div class="fill" style="width:${(100*c.n/max).toFixed(1)}%;background:var(${col.color})"></div></div>
+      <div class="bv">${c.n}</div></div>`;
+  }).join("");
+  document.querySelectorAll("#contribBars .hb").forEach(el=>{
+    const k = el.dataset.k, c = CODES[k];
+    const names = DATA.filter(d=>d.c1===k).map(d=>d.name);
+    const label = names.length>8 ? names.slice(0,8).join(", ")+" +"+(names.length-8)+" more" : names.join(", ");
+    el.addEventListener("mousemove",e=>showTip(e,`<b>${c.name}</b> — ${names.length}<br>${esc(label)}`));
+    el.addEventListener("mouseleave",hideTip);
+  });
+}
+
+function buildMethodChart(){
+  const years=[...new Set(DATA.map(d=>d.year))].sort();
+  const series=[{k:"E",c:"--s1"},{k:"T",c:"--s2"},{k:"B",c:"--s3"}];
+  const maxN = Math.max(...years.map(y=>DATA.filter(d=>d.year===y).length));
+  $("#methodStack").innerHTML = years.map(y=>{
+    const rows=DATA.filter(d=>d.year===y);
+    const segs=series.map(s=>{
+      const n=rows.filter(d=>d.method===s.k).length;
+      return n? `<div class="seg" data-y="${y}" data-k="${s.k}" data-n="${n}" style="height:${(100*n/maxN).toFixed(1)}%;background:var(${s.c})"></div>`:"";
+    }).join("");
+    return `<div class="col" data-y="${y}">${segs}</div>`;
+  }).join("");
+  $("#methodX").innerHTML = years.map(y=>`<div>${String(y).slice(2)}</div>`).join("");
+  $("#methodLegend").innerHTML = series.map(s=>`<span><span class="dot" style="background:var(${s.c})"></span>${METHODS[s.k]}</span>`).join("");
+  document.querySelectorAll("#methodStack .col").forEach(el=>{
+    const y=+el.dataset.y, rows=DATA.filter(d=>d.year===y);
+    const parts=series.map(s=>{
+      const n=rows.filter(d=>d.method===s.k).length;
+      return n? `${METHODS[s.k]}: ${n}`:null;
+    }).filter(Boolean).join(" · ");
+    el.addEventListener("mousemove",e=>showTip(e,`<b>${y}</b> — ${rows.length} winners<br>${parts}`));
+    el.addEventListener("mouseleave",hideTip);
+  });
+}
+
+function buildContribTime(){
+  const years=[...new Set(DATA.map(d=>d.year))].sort();
+  const order=["D","F","I","S","T","M"];
+  const RECIPE={name:"New data + model (recipe)",color:"--s7"};
+  const allKeys = order.concat(["R"]);
+  const meta = k => k==="R" ? RECIPE : CODES[k];
+  const counts = {}, ma = {};
+  order.forEach(k=>counts[k]=years.map(y=>DATA.filter(d=>d.year===y&&d.c1===k).length));
+  counts["R"]=years.map(y=>DATA.filter(d=>d.year===y&&d.seru).length);
+  allKeys.forEach(k=>ma[k]=counts[k].map((_,i)=>{
+    const w=counts[k].slice(Math.max(0,i-1),Math.min(counts[k].length,i+2));
+    return w.reduce((a,b)=>a+b,0)/w.length;
+  }));
+  const maxV = Math.ceil(Math.max(...allKeys.map(k=>Math.max(...ma[k]))));
+  const W=980,H=230,padL=26,padR=10,padT=12,padB=26;
+  const X=i=>padL+(W-padL-padR)*(years.length===1?0.5:i/(years.length-1));
+  const Y=v=>padT+(H-padT-padB)*(1-v/maxV);
+  const active = new Set(allKeys);
+  function draw(){
+    let g="";
+    for(let v=0;v<=maxV;v++){
+      g+=`<line x1="${padL}" y1="${Y(v)}" x2="${W-padR}" y2="${Y(v)}" stroke="var(--grid)" stroke-width="1"/>`+
+         `<text x="${padL-8}" y="${Y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)">${v}</text>`;
+    }
+    const xt = years.map((y,i)=>`<text x="${X(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)">${String(y).slice(2)}</text>`).join("");
+    const lines = allKeys.filter(k=>active.has(k)).map(k=>{
+      const pts = ma[k].map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ");
+      const dash = k==="R" ? ' stroke-dasharray="6 4"' : "";
+      const marks = ma[k].map((v,i)=>`<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="3.5" fill="var(${meta(k).color})" stroke="var(--surface)" stroke-width="2"/>`).join("");
+      return `<g><polyline points="${pts}" fill="none" stroke="var(${meta(k).color})" stroke-width="2"${dash} stroke-linejoin="round" stroke-linecap="round"/>${marks}</g>`;
+    }).join("");
+    const hover = years.map((y,i)=>`<rect data-i="${i}" x="${(X(i)-((W-padL-padR)/(years.length-1))/2).toFixed(1)}" y="${padT}" width="${((W-padL-padR)/(years.length-1)).toFixed(1)}" height="${H-padT-padB}" fill="transparent"/>`).join("");
+    $("#contribLines").innerHTML =
+      `<svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block" role="img" aria-label="Primary contribution moving averages per cohort">
+        ${g}<line x1="${padL}" y1="${Y(0)}" x2="${W-padR}" y2="${Y(0)}" stroke="var(--baseline)" stroke-width="1"/>
+        ${xt}${lines}<g id="clHover">${hover}</g>
+        <line id="clCross" x1="0" x2="0" y1="${padT}" y2="${H-padB}" stroke="var(--baseline)" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>
+      </svg>`;
+    const cross = $("#clCross");
+    document.querySelectorAll("#clHover rect").forEach(r=>{
+      const i=+r.dataset.i, y=years[i];
+      const parts=allKeys.filter(k=>active.has(k)).map(k=>(counts[k][i]||ma[k][i])?`${meta(k).name}: ${counts[k][i]} (MA ${ma[k][i].toFixed(1)})`:null).filter(Boolean).join("<br>");
+      r.addEventListener("mousemove",e=>{
+        cross.setAttribute("x1",X(i));cross.setAttribute("x2",X(i));cross.setAttribute("visibility","visible");
+        showTip(e,`<b>${y}</b> — ${DATA.filter(d=>d.year===y).length} winners<br>${parts||"—"}`);
+      });
+      r.addEventListener("mouseleave",()=>{cross.setAttribute("visibility","hidden");hideTip();});
+    });
+  }
+  $("#contribLegend").innerHTML = allKeys.map(k=>
+    `<button type="button" data-k="${k}" aria-pressed="true" title="Click to show/hide">
+       <span class="dot" style="background:var(${meta(k).color})"></span><span class="lbl">${meta(k).name}</span></button>`).join("");
+  document.querySelectorAll("#contribLegend button").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const k=b.dataset.k;
+      if(active.has(k)){ if(active.size>1){active.delete(k);b.classList.add("off");b.setAttribute("aria-pressed","false");} }
+      else {active.add(k);b.classList.remove("off");b.setAttribute("aria-pressed","true");}
+      draw();
+    });
+  });
+  draw();
+}
+
+function buildTaxo(){
+  $("#taxoDefs").innerHTML = Object.entries(CODES).map(([k,c])=>
+    `<div><span class="dot" style="background:var(${c.color})"></span><span><b>${c.name}</b> — <span class="d">${c.def}</span></span></div>`).join("");
+}
+
+/* ---------- table ---------- */
+let sortK="year", sortAsc=true, openRow=null;
+function fieldList(){return [...new Set(DATA.flatMap(d=>d.field))].sort();}
+function buildFilters(){
+  const years=[...new Set(DATA.map(d=>d.year))].sort();
+  $("#fYear").innerHTML = `<option value="">All years</option>`+years.map(y=>`<option>${y}</option>`).join("");
+  $("#fMethod").innerHTML = `<option value="">All methods</option>`+Object.entries(METHODS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+  $("#fContrib").innerHTML = `<option value="">All contributions</option>`+Object.entries(CODES).map(([k,c])=>`<option value="${k}">${c.name}</option>`).join("");
+  $("#fField").innerHTML = `<option value="">All fields</option>`+fieldList().map(f=>`<option>${f}</option>`).join("");
+  ["fYear","fMethod","fContrib","fField"].forEach(id=>$("#"+id).addEventListener("change",render));
+  $("#fSearch").addEventListener("input",render);
+  $("#fReset").addEventListener("click",()=>{["fYear","fMethod","fContrib","fField","fSearch"].forEach(id=>$("#"+id).value="");render();});
+}
+function currentRows(){
+  const y=$("#fYear").value, m=$("#fMethod").value, c=$("#fContrib").value, f=$("#fField").value,
+        q=$("#fSearch").value.trim().toLowerCase();
+  let rows = DATA.filter(d=>
+    (!y||d.year==y) && (!m||d.method===m) && (!c||d.c1===c||d.c2===c) && (!f||d.field.includes(f)) &&
+    (!q||(d.name+" "+d.phd+" "+d.place+" "+d.jmp+" "+d.field.join(" ")).toLowerCase().includes(q)));
+  rows.sort((a,b)=>{
+    let va=a[sortK], vb=b[sortK];
+    if(sortK==="seru"){va=a.seru?0:1;vb=b.seru?0:1;}
+    if(sortK==="method"){va=METHODS[va];vb=METHODS[vb];}
+    if(typeof va==="string"){va=va.toLowerCase();vb=vb.toLowerCase();}
+    const r = va<vb?-1:va>vb?1:0;
+    return (sortAsc?r:-r) || a.year-b.year || a.name.localeCompare(b.name);
+  });
+  return rows;
+}
+function chip(k){const c=CODES[k];return `<span class="chip"><span class="dot" style="background:var(${c.color})"></span>${c.name}</span>`;}
+function render(){
+  const rows=currentRows();
+  $("#fCount").textContent = rows.length+" of "+DATA.length;
+  $("#tbody").innerHTML = rows.map((d,i)=>{
+    const id=d.year+"-"+d.name.replace(/\W/g,"");
+    return `<tr class="main" data-id="${id}" tabindex="0">
+      <td class="yr">${d.year}</td>
+      <td><div class="pname">${esc(d.name)}</div><div class="jmpt">${esc(d.jmp)}</div></td>
+      <td>${esc(d.phd)}</td>
+      <td>${esc(d.place)}</td>
+      <td class="fieldcell">${d.field.map(esc).join(" · ")}</td>
+      <td><span class="mchip">${METHODS[d.method]}</span></td>
+      <td style="text-align:center">${d.seru?'<span class="seru" style="margin-left:0" title="Somewhat new data + a model used to interpret it">✓</span>':""}</td>
+      <td>${chip(d.c1)}${d.c2?chip(d.c2):""}</td>
+    </tr>
+    <tr class="detail" data-for="${id}" hidden><td class="yr"></td><td colspan="7">
+      <div class="note">${esc(d.note)}${d.url?` &nbsp;<a href="${d.url}" target="_blank" rel="noopener">website ↗</a>`:""}</div>
+    </td></tr>`;
+  }).join("");
+  document.querySelectorAll("tr.main").forEach(tr=>{
+    const toggle=()=>{
+      const det=document.querySelector(`tr.detail[data-for="${tr.dataset.id}"]`);
+      const wasOpen=!det.hidden;
+      document.querySelectorAll("tr.detail").forEach(x=>x.hidden=true);
+      det.hidden=wasOpen;
+    };
+    tr.addEventListener("click",e=>{if(e.target.tagName!=="A")toggle();});
+    tr.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  });
+  document.querySelectorAll("thead th").forEach(th=>{
+    const arr=th.querySelector(".arr"); if(!arr)return;
+    arr.textContent = th.dataset.k===sortK ? (sortAsc?"↑":"↓") : "";
+  });
+}
+document.querySelectorAll("thead th").forEach(th=>{
+  if(!th.dataset.k)return;
+  th.addEventListener("click",()=>{
+    if(sortK===th.dataset.k)sortAsc=!sortAsc; else {sortK=th.dataset.k;sortAsc=true;}
+    render();
+  });
+});
+
+buildTiles();buildContribChart();buildMethodChart();buildContribTime();buildTaxo();buildFilters();render();
+</script>
